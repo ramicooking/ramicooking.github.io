@@ -1,332 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../style.css"/>
-        <title> My First Webpage</title>
+        <title>Rami Alzoubi Cooking</title>
+        <script src="app.js"></script>
        
     </head>
-    <p style="position: relative; top: 50%;">
-        <a href="../index.html">HOME</a> &nbsp;&nbsp; 
-        <a href="tests.html">Test Page here!</a>  &nbsp;&nbsp; 
-        <a href="team.html">Team </a> &nbsp;&nbsp;
-        <a href="projekte.html">Projekte</a> &nbsp;&nbsp; 
-        <a href="publications.html">Publikationen</a> &nbsp;&nbsp; 
-        zu <a href="https://catma.de" style="color:black">CATMA</a> &nbsp;&nbsp; 
-        zu <a href="https://fortext.net">forTEXT</a> &nbsp;&nbsp; 
-
-    <HR NOSHADE="noshade">
-    <body>
+        <body>
+            <nav>
+                <a href="../index.html">HOME</a> 
+                <a href="team.html">TEAM</a> 
+                <a href="kontakt.html">KONTAKT</a> 
+                <hr>
+            </nav>
         
-        <h1 style="text-align: center;"> literaturverzeichnis <br></h1>
-        <img  style="margin-left: 20%;
-        max-width:60%;height:auto;" src="../teambild.jpg"> 
-        </br>
-
-
-<!--div>
-<script>// Setzen Sie Ihren API-Schlüssel und Ihre Bibliotheks-ID hier ein
-    //var apiKey = 'r5hpQZjeTsI2cTszeD8LpEWS'; //textauszeichnung
-    var apiKey = 'Njmwb0MPtJRSVSgyysrwy9jr';
-    //var apiKey = '47PCCWNR';
-    var libraryId = '7427590';
-    var collectionId= '47PCCWNR';
-    //var libraryId = '7427590';
-    
-    // Erstellen Sie die URL, um auf die Zotero-API zuzugreifen
-    //var url = 'https://api.zotero.org/users/' + libraryId + '/items/top?format=json&key=' + apiKey;
-    //var url = 'https://api.zotero.org/users/7427590/items/top?format=json&key=Njmwb0MPtJRSVSgyysrwy9jr'
-    // var url = "https://api.zotero.org/users/7427590/collections/47PCCWNR/items?format=bib&style=apa"
-    //get subcollection
-    //var url = 'https://api.zotero.org/users/7427590/collections/47PCCWNR/items?format=json&key=Njmwb0MPtJRSVSgyysrwy9jr';
-    var url = 'https://api.zotero.org/users/'+libraryId+'/collections/'+collectionId+'/items?format=json&key='+apiKey;
-
-    // Rufen Sie die Daten von der Zotero-API ab
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        // Verarbeiten Sie die Daten und zeigen Sie sie an
-        // Sortieren Sie die Daten nach Nachnamen der Autoren
-        data.sort((a, b) => {
-          var authorA = a.data.creators[0].lastName.toUpperCase();
-          var authorB = b.data.creators[0].lastName.toUpperCase();
-          if (authorA < authorB) {
-            return -1;
-          }
-          if (authorA > authorB) {
-            return 1;
-          }
-          return 0;
-        });
-        for (var i = 0; i < data.length; i++) {
-          var item = data[i];
-          var date = new Date(item.data.date);
-          var formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-          var authors = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName);
-          var title = item.data.title;
-          var publisher = item.data.publisher;
-          var place = item.data.place;
-          var type = item.data.itemType;
-    
-          // Erstellen Sie den Eintrag in APA-Stil
-          var entry = authors.join(', ') + '. (' + date.getFullYear() + '). ' + title + '. ' + publisher + '. ' + place + '.';
-    
-          // Anzeigen des Eintrags auf der Webseite
-          var entryContainer = document.createElement('div');
-          entryContainer.innerHTML = entry;
-          document.body.appendChild(entryContainer);
-         // litlist.push(entry); //add to list
-        }
-      
-
-      })
-      .catch(error => console.error(error));
-    
-</script>
-</div-->
-
-<!--body style="border-left: 5cm;text-align: center;">
-  <script>// Setzen Sie Ihren API-Schlüssel und Ihre Bibliotheks-ID hier ein
-      var apiKey = 'QrDAC57esCVVLi1EaMRg8OJE'; //#QrDAC57esCVVLi1EaMRg8OJE #Njmwb0MPtJRSVSgyysrwy9jr
-      var libraryId = '538260'; //538260 7427590
-      var groupID = '1547948'; // Gruppen-ID hier einfügen
-      var collectionId= '2CYW56EE';
-      var url = 'https://api.zotero.org/groups/'+groupID+'/collections/'+collectionId+'/items?format=json&key='+apiKey;
-      
-      //WORKS: https://api.zotero.org/groups/1547948/collections/2CYW56EE/items?format=json&key=QrDAC57esCVVLi1EaMRg8OJE
-      // Rufen Sie die Daten von der Zotero-API ab
-fetch(url)
-.then(response => response.json())
-.then(data => {
-// Verarbeiten Sie die Daten und zeigen Sie sie an
-// Sortieren Sie die Daten nach Jahr
-data.sort((a, b) => {
-var dateA = new Date(a.data.date);
-var dateB = new Date(b.data.date);
-return dateB.getFullYear() - dateA.getFullYear();
-});
-
-  // Durchlaufen Sie die sortierten Daten und gruppieren Sie sie nach Jahr
-  var yearGroup = '';
-  for (var i = 0; i < data.length; i++) {
-    var item = data[i];
-    var date = new Date(item.data.date);
-    var year = date.getFullYear();
-    var formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    var authors = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName);
-    var title = item.data.title;
-    var publisher = item.data.publisher;
-    var place = item.data.place;
-    var type = item.data.itemType;
-
-    // Erstellen Sie den Eintrag in APA-Stil
-    var entry = authors.join(', ') + '. (' + year + '). ' + title + '. ' + publisher + '. ' + place + '.';
-
-    // Fügen Sie eine Subüberschrift hinzu, wenn ein neues Jahr beginnt
-    if (yearGroup !== year.toString()) {
-      var yearHeader = document.createElement('h2');
-      yearHeader.innerText = year;
-      document.body.appendChild(yearHeader);
-      yearGroup = year.toString();
-    }
-    
- 
-    // Anzeigen des Eintrags auf der Webseite
-    var entryContainer = document.createElement('div');
-    entryContainer.innerHTML = entry;
-    document.body.appendChild(entryContainer);
- 
-  }
-})
-.catch(error => console.error(error));
-
-</script>
-</body-->
-
-<body style="border-left: 5cm;text-align: center;">
-  <script>// Setzen Sie Ihren API-Schlüssel und Ihre Bibliotheks-ID hier ein
-      //--var apiKey = 'QrDAC57esCVVLi1EaMRg8OJE'; //#QrDAC57esCVVLi1EaMRg8OJE #Njmwb0MPtJRSVSgyysrwy9jr
-      //var libraryId = '538260'; //538260 7427590
-      //var groupID = '1547948'; // Gruppen-ID hier einfügen
-      //var collectionId= '2CYW56EE';
-      //var url = 'https://api.zotero.org/groups/'+groupID+'/collections/'+collectionId+'/items?format=json&key='+apiKey;
-     
-      var apiKey = 'Njmwb0MPtJRSVSgyysrwy9jr';
-      var libraryId = '7427590';
-      var collectionId= '2QEXTVBK';
-      var url = 'https://api.zotero.org/users/'+libraryId+'/collections/'+collectionId+'/items?format=json&key='+apiKey;
-
-      //WORKS: https://api.zotero.org/groups/1547948/collections/2CYW56EE/items?format=json&key=QrDAC57esCVVLi1EaMRg8OJE
-      // Rufen Sie die Daten von der Zotero-API ab
-fetch(url)
-.then(response => response.json())
-.then(data => {
-// Verarbeiten Sie die Daten und zeigen Sie sie an
-// Entfernen von Duplikaten und Filtern nach Jahr
-var years = new Set();
-var filteredData = data.filter(item => {
-var date = new Date(item.data.date);
-var year = date.getFullYear();
-if (years.has(year)) {
-return false;
-} else {
-years.add(year);
-return true;
-}
-});
-
-  // Sortieren der Daten nach Jahr
-  filteredData.sort((a, b) => {
-    var dateA = new Date(a.data.date);
-    var dateB = new Date(b.data.date);
-    return dateB.getFullYear() - dateA.getFullYear();
-  });
-
-  // Durchlaufen Sie die sortierten Daten und gruppieren Sie sie nach Jahr
-  var yearGroup = '';
-  for (var i = 0; i < filteredData.length; i++) {
-    var item = filteredData[i];
-    var date = new Date(item.data.date);
-    var year = date.getFullYear();
-    var formattedDate = year.toString();
-    var authors = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName);
-    var title = item.data.title;
-    var publisher = item.data.publisher;
-    var place = item.data.place;
-    var type = item.data.itemType;
-
-    // Erstellen Sie den Eintrag in APA-Stil
-    var entry = authors.join(', ') + '. (' + formattedDate + '). ' + title + '. ' + publisher + '. ' + place + '.';
-
-    // Fügen Sie eine Subüberschrift hinzu, wenn ein neues Jahr beginnt
-    if (yearGroup !== year.toString()) {
-      var yearHeader = document.createElement('h2');
-      yearHeader.innerText = year;
-      document.body.appendChild(yearHeader);
-      yearGroup = year.toString();
-    }
-    
- 
-    // Anzeigen des Eintrags auf der Webseite
-    var entryContainer = document.createElement('div');
-    entryContainer.innerHTML = entry;
-    document.body.appendChild(entryContainer);
- 
-  }
-})
-.catch(error => console.error(error));
-</script>
-</body>
-
-
-
-<h2> GO TO</h2>
-       
-<p style="position: static; left:10%">
-    <a href="../index.html">HOME</a>
-    <a href="tests.html">Test Page here!</a><br/>
-    <a href="team.html">Team </a><br/>
-   
-    <a href="projekte.html">Projekte</a><br/>
-    <a href="publications.html">Publikationen</a><br/>
-    zu <a href="https://catma.de" style="color:black">CATMA</a><br>
-    zu <a href="https://fortext.net">forTEXT</a><br>
-    
-</p>
-
-<br>
-<br>
-</body>
-
-
-</html> 
-<!--
-    
-    <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../style.css"/>
-        <title> My First Webpage</title>
-    </head>
-    <p style="position: relative; top: 50%;">
-        <a href="../index.html">HOME</a> &nbsp;&nbsp; 
-        <a href="tests.html">Test Page here!</a>  &nbsp;&nbsp; 
-        <a href="team.html">Team </a> &nbsp;&nbsp;
-        <a href="projekte.html">Projekte</a> &nbsp;&nbsp; 
-        <a href="publications.html">Publikationen</a> &nbsp;&nbsp; 
-        zu <a href="https://catma.de" style="color:black">CATMA</a> &nbsp;&nbsp; 
-        zu <a href="https://fortext.net">forTEXT</a> &nbsp;&nbsp; 
-
-    <HR NOSHADE="noshade">
-    <body>
+            <!-- Neuer statischer Titel -->
+            <h1 class="title">WhiskandKnife Catering</h1>
         
-        <h1 style="text-align: center;"> literaturverzeichnis <br></h1>
-        <img  style="margin-left: 20%;
-        max-width:60%;height:auto;" src="../teambild.jpg"> 
-        </br>
-
-        <h2> CATMA<br/></h2>
+            <!-- Animiertes "Coming soon" -->
+             <div>
+              <p>Sie sind auf der Suche nach einem Catering für Ihre Feierlichkeit im Raum Darmstadt? 
+                Schicken Sie mir gerne eine Anfrage mit ihren Vorstellungen und Wünschen per Mail zu. 
+                <br> Um Ihnen ein Angebot machen zu können, das genau zu Ihnen passt, 
+                freue ich mich über Informationen zu gewünschten Speisen, kulinarischen Vorlieben, der geplanten Personenanzahl sowie dem Veranstaltungssdatum.
+                <br>
    
-
-           <div class="litstyle"> 
-<script>
-// Setzen Sie Ihren API-Schlüssel und Ihre Bibliotheks-ID hier ein
-var apiKey = 'r5hpQZjeTsI2cTszeD8LpEWS';
-var libraryId = '7427590';
-
-// Erstellen Sie die URL, um auf die Zotero-API zuzugreifen
-var url = 'https://api.zotero.org/users/' + libraryId + '/items/top?format=json&key=' + apiKey;
-
-// Rufen Sie die Daten von der Zotero-API ab
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    // Verarbeiten Sie die Daten und zeigen Sie sie an
-    for (var i = 0; i < data.length; i++) {
-      var item = data[i];
-      var date = new Date(item.data.date);
-      var formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      var authors = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName);
-      var title = item.data.title;
-      var publisher = item.data.publisher;
-      var place = item.data.place;
-      var type = item.data.itemType;
-
-      // Erstellen Sie den Eintrag in APA-Stil
-      var entry = authors.join(', ') + '. (' + date.getFullYear() + '). ' + title + '. ' + publisher + '. ' + place + '.';
-
-      // Anzeigen des Eintrags auf der Webseite
-      var entryContainer = document.createElement('div');
-      entryContainer.innerHTML = entry;
-      document.body.appendChild(entryContainer);
-    }
-  })
-  .catch(error => console.error(error));
-
-  </script>
-
-</div>
-
-<h2> GO TO</h2>
-       
-<p style="position: relative; left:10%">
-    <a href="../index.html">HOME</a>
-    <a href="tests.html">Test Page here!</a><br/>
-    <a href="team.html">Team </a><br/>
-   
-    <a href="projekte.html">Projekte</a><br/>
-    <a href="publications.html">Publikationen</a><br/>
-    zu <a href="https://catma.de" style="color:black">CATMA</a><br>
-    zu <a href="https://fortext.net">forTEXT</a><br>
-    
-</p>
-<br>
-<br>
-</body>
-
-
-</html> 
--->
-
-
+              </p>
+            </div>
+              
+             
+            <h3> Mail: alzoubiramicooking@gmail.com</h3>
+        
+            <script src="app.js"></script>
+        </body>
+        </html>
+        
+        

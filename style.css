@@ -1,54 +1,84 @@
-title{
-    color: black;
-    font-family: 'Open Sans',sans-serif;
-    text-transform: uppercase;
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    max-width: 600px; /* Begrenze die maximale Breite */
+    margin-left: auto;
+    margin-right: auto;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
 
 }
 
-h1{
-    color: black;
-    font-family: 'Open Sans',sans-serif, monospace;
-    text-transform: uppercase;
-    font-size: medium large;
-    margin-top:5%;
-    margin-left: 5%;
-    margin-right:5%;
-} 
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Abstand zwischen dem statischen Titel und dem animierten Text */
+    text-align: center; /* Zentriert den Titel */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
-h2{
-    color: black;
-    font-family: 'Open Sans',sans-serif, monospace;
-    margin-left: 20%;
-} 
-
-h3{
-    color: black;
-    font-family: 'Open Sans',sans-serif, monospace;
-    margin-left: 10%;
     
-} 
+}
 
-
-body {
-    background-color: whitesmoke;
-    font-family: 'Open Sans',sans-serif;
-    margin-left: 5%;
-
+.coming-soon {
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    letter-spacing: 7px;
+    opacity: 0;
+    animation: fadeIn 3s forwards, typewriter 3s steps(13) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    color: rgb(107, 111, 111);
+    width: 0;
+    max-width: 600px; /* Feste Breite für die Animation */
+    text-align: center; /* Zentriert den animierten Text */
 
 }
 
-p {
-    color: grey;
-    font-family: 'Open Sans';
-    margin-left: 20%;
-    margin-right:20%;
-    text-align: justify;
-   
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 600px; } /* Breite, die genug Platz für den Text bietet */
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin: 0 45px;
+    text-decoration: none;
+    color: rgb(82, 79, 79);
+
+    font-size: 16px;
+}
+
+nav hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 2px solid #ccc;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 li {
     color: grey;
-    font-family: 'Open Sans';
+    font-family: 'Arial';
     margin-left: 20%;
     margin-right:30%;
    
@@ -61,11 +91,24 @@ a {
 div {
     display: block;
     color:black;
-    font-family: 'Open Sans';
-    margin-left:20%;
-    margin-right:30%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
+h3 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.centered-div {
+    background-color: #e0e0e0; /* Hintergrundfarbe für das div */
+    padding: 20px;             /* Innenabstand */
+    text-align: center;        /* Text zentrieren */
+    margin-top: 20px;          /* Abstand nach oben */
+    border-radius: 10px;       /* Ecken abrunden */
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
 /*
 img {
