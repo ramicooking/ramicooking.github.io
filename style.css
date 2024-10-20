@@ -30,7 +30,7 @@ body, html {
     font-weight: bold;
     letter-spacing: 7px;
     opacity: 0;
-    animation: fadeIn 3s forwards, typewriter 3s steps(13) forwards;
+    animation: fadeIn 3s forwards, typewriter 3s steps(13) forwards, removeCursor 0s 3.1s forwards; /* Hinzufügen der neuen Animation */
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid black;
@@ -49,6 +49,11 @@ body, html {
 @keyframes typewriter {
     from { width: 0; }
     to { width: 600px; } /* Breite, die genug Platz für den Text bietet */
+}
+
+@keyframes removeCursor {
+    0% { border-right: 2px solid black; } /* Behält den Cursor */
+    100% { border-right: none; }          /* Entfernt den Cursor */
 }
 
 nav {
