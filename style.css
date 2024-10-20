@@ -1,0 +1,86 @@
+title{
+    color: black;
+    font-family: 'Open Sans',sans-serif;
+    text-transform: uppercase;
+
+}
+
+h1{
+    color: black;
+    font-family: 'Open Sans',sans-serif, monospace;
+    text-transform: uppercase;
+    font-size: medium large;
+    margin-top:5%;
+    margin-left: 5%;
+    margin-right:5%;
+} 
+
+h2{
+    color: black;
+    font-family: 'Open Sans',sans-serif, monospace;
+    margin-left: 20%;
+} 
+
+h3{
+    color: black;
+    font-family: 'Open Sans',sans-serif, monospace;
+    margin-left: 10%;
+    
+} 
+
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Open Sans',sans-serif;
+    margin-left: 5%;
+
+
+}
+
+p {
+    color: grey;
+    font-family: 'Open Sans';
+    margin-left: 20%;
+    margin-right:20%;
+    text-align: justify;
+   
+}
+
+li {
+    color: grey;
+    font-family: 'Open Sans';
+    margin-left: 20%;
+    margin-right:30%;
+   
+}
+
+a {
+    color: black;
+}
+
+div {
+    display: block;
+    color:black;
+    font-family: 'Open Sans';
+    margin-left:20%;
+    margin-right:30%;
+}
+
+
+/*
+img {
+    position: relative;
+    bottom: 10px;
+    left: 0px;
+    margin-left: 5%;
+    max-width:20%;
+    height:"auto"
+
+}*/
+/*
+
+button {
+
+    color: black;
+    font-family: Open Sans, sans-serif;
+}*/
