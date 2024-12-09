@@ -270,3 +270,19 @@ button {
     margin: 10px 0; /* Abstände zwischen den Bildern */
     object-fit: cover; /* Sicherstellen, dass das Bild den verfügbaren Platz ausfüllt, ohne verzerrt zu werden */
 }
+
+
+/* Media Query für kleine Bildschirme (z.B. Smartphones) */
+@media (max-width: 768px) {
+    /* Auf kleinen Bildschirmen werden die Bilder untereinander angezeigt */
+    .carousel-inner {
+        flex-direction: column; /* Bilder vertikal anordnen */
+    }
+
+    /* Jedes Bild soll den gesamten Container einnehmen */
+    .carousel-image {
+        width: 100%; /* 100% der Containerbreite */
+        transform: scale(1); /* Keine Verkleinerung mehr für kleinere Bildschirme */
+        opacity: 1; /* Die Bilder sind nicht mehr transparent */
+    }
+}
