@@ -25,11 +25,11 @@ body, html {
     display: flex;
     justify-content: center; /* Zentriert das Bild horizontal */
     /*margin: 10px 0; /* Abstand oben und unten */
-    margin-bottom: -9em;
+    margin-bottom: 0em;
 }
 
 .image-container img {
-    max-width: 75%;  /* Bild passt sich der Containerbreite an */
+    max-width: 40%;  /* Bild passt sich der Containerbreite an */
     height: auto;     /* Bildhöhe bleibt proportional */
     /*border-radius: 5px; /* Optionale Abrundung der Ecken */
 }
@@ -38,7 +38,7 @@ body, html {
     font-size: 36px;
     font-weight: bold;
     /*margin-bottom: 20px; /* Abstand zwischen dem statischen Titel und dem animierten Text */
-    margin-top: 5px;
+    margin-top: -25px;
     text-align: center; /* Zentriert den Titel */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
@@ -50,7 +50,7 @@ body, html {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     letter-spacing: 7px;
-    opacity: 0;
+    opacity: 80%;
     animation: fadeIn 3s forwards, typewriter 3s steps(13) forwards, removeCursor 0s 3.1s forwards; /* Hinzufügen der neuen Animation */
     white-space: nowrap;
     overflow: hidden;
@@ -61,6 +61,8 @@ body, html {
     text-align: center; /* Zentriert den animierten Text */
 
 }
+
+
 
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -136,6 +138,26 @@ h3 {
     margin-right: 10%;
 }
 
+
+footer {
+    /*background-color: #f8f8f8; /* Beispiel Hintergrundfarbe */
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Standardmäßig relativ */
+    bottom: 0; /* Positioniert sich an den unteren Rand */
+    width: 100%; /* Nimmt die komplette Breite ein */
+    flex-shrink: 0; /* Verhindert, dass der Footer schrumpft */
+    /*box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatteneffekt */
+}
+
+/* Link-Styling im Footer */
+footer a {
+    text-decoration: none;
+   /* color: #333;*/
+    font-size: 14px;
+}
+
+
 /*
 img {
     position: relative;
@@ -153,3 +175,98 @@ button {
     color: black;
     font-family: Open Sans, sans-serif;
 }*/
+
+
+
+/* Slideshow 
+
+/* Slideshow Styling */
+/* Slideshow Styling */
+.slideshow {
+    position: relative;
+    width: 80%; /* Passe Breite an */
+    max-width: 600px;
+    height: 300px; /* Passe Höhe an */
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild wird skaliert */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+/* Slideshow (Carousel) Styling */
+/* Carousel Wrapper Styling */
+.carousel {
+    position: relative;
+    width: 120%; /* Passe die Breite an */
+    max-width: 800px;
+    height: 200px;
+    margin: 20px auto; /* Zentriere den Carousel-Wrapper */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Innerer Container für die Bilder */
+.carousel-inner {
+    display: flex;
+    justify-content: center; /* Bilder zentrieren */
+    align-items: center;
+    width: 500%; /* Multipliziere mit der Anzahl der Bilder */
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+/* Bilder Styling */
+.carousel-image {
+    width: 40%; /* Jedes Bild nimmt 20% der Carousel-Breite ein */
+    flex-shrink: 0; /* Verhindere, dass Bilder schrumpfen */
+    object-fit: cover; /* Skaliere das Bild proportional */
+    opacity: 0.9; /* Vorschau-Bilder halbtransparent */
+    transform: scale(0.8); /* Vorschau-Bilder kleiner */
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.carousel-image.active {
+    opacity: 1; /* Aktives Bild vollständig sichtbar */
+    transform: scale(1); /* Aktives Bild größer */
+}
+
+/* Zusätzliche Vorschau-Abstände */
+.carousel-image:not(.active) {
+    margin: 0 -10px; /* Überlappung zwischen Vorschauen */
+}
+
+/* Container für alle Bilder */
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Bilder untereinander anzeigen */
+    align-items: center; /* Bilder zentrieren */
+    overflow-y: scroll; /* Ermöglicht das Scrollen bei vielen Bildern */
+    height: 80vh; /* Die Höhe des Containers, in dem gescrollt wird, auf 80% der Ansichtshöhe setzen */
+    padding: 5px;
+}
+
+/* Styling für die Bilder */
+.image-gallery img {
+    width: 90%; /* Oder eine feste Breite wie 600px, um die Bilder zu skalieren */
+    margin: 10px 0; /* Abstände zwischen den Bildern */
+    object-fit: cover; /* Sicherstellen, dass das Bild den verfügbaren Platz ausfüllt, ohne verzerrt zu werden */
+}
