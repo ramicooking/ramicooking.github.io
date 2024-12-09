@@ -277,6 +277,7 @@ button {
     /* Auf kleinen Bildschirmen werden die Bilder untereinander angezeigt */
     .carousel-inner {
         flex-direction: column; /* Bilder vertikal anordnen */
+        width: 100%; /* Breite auf 100% für kleine Bildschirme */
     }
 
     /* Jedes Bild soll den gesamten Container einnehmen */
